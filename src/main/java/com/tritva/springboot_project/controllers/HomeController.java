@@ -14,6 +14,7 @@ import com.tritva.springboot_project.services.CityService;
 
 
 
+
 // endpoints
 @RestController
 public class HomeController {
@@ -34,6 +35,11 @@ public class HomeController {
     @PostMapping("addcity")
     public City SaveCity(@RequestBody City city){
         return cityService.saveCity(city);
+    }
+    
+    @GetMapping("getcity")
+    public City getCity(String cityname) {
+        return cityService.getCity(cityname);
     }
     
 }
