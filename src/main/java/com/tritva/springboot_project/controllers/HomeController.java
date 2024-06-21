@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tritva.springboot_project.entities.City;
+import com.tritva.springboot_project.pojos.CityRequest;
 import com.tritva.springboot_project.services.CityService;
 
 
@@ -41,5 +42,13 @@ public class HomeController {
     public City getCity(String cityname) {
         return cityService.getCity(cityname);
     }
+
+    @PostMapping("savecity")
+    public City addcity(@RequestBody CityRequest cityRequest) {
+       return cityService.addcity(cityRequest);
+    }
+    
+
+   
     
 }
